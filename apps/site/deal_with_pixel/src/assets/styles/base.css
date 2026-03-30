@@ -1,0 +1,13 @@
+:root{
+    --main-color: linear-gradient(#ff0000 0%, #CD3200 25%, #9B6432 50%, #FFAF4B 75%, #FFC864 100%);
+}
+
+@font-face {
+  font-family: 'sunless-day';
+  src: url('@/assets/fonts/Sunless day.otf');
+}
+
+.background-color-page{
+    background: var(--main-color);
+    opacity: 0.25;
+}
