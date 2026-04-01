@@ -1,5 +1,6 @@
 :root{
-    --main-color: linear-gradient(#ff0000 0%, #CD3200 25%, #9B6432 50%, #FFAF4B 75%, #FFC864 100%);
+    --main-color: linear-gradient(#ff0000, #CD3200 , #9B6432 , #FFAF4B , #FFC864);
+    --reverse-main-color: linear-gradient(#FFC864, #FFAF4B , #9B6432 , #CD3200, #ff0000);
 }
 
 @font-face {
@@ -10,4 +11,8 @@
 .background-color-page{
     background: var(--main-color);
     opacity: 0.25;
+}
+
+.main-font-family{
+    font-family: sunless-day;
 }
