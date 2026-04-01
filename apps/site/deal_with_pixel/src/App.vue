@@ -8,7 +8,8 @@ document.title = "Deal With Pixel - ";
 </script>
 
 <template>
-  <!-- Модальное окно со справочной информацией -->
+
+<!-- Модальное окно со справочной информацией -->
 
 <div class="modal fade" id="projectInformationModal" tabindex="-1" aria-labelledby="projectInformationModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
@@ -64,7 +65,8 @@ document.title = "Deal With Pixel - ";
     </div>
     
   </div>
-  
+
+
 </template>
 
 <style scoped>

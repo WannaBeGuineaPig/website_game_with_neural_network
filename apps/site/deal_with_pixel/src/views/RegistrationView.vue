@@ -8,7 +8,7 @@ import AuthPerAccBTN from '../components/AuthPerAccBTN.vue'
 import TemplateBTN from '../components/TemplateBTN.vue'
 import TemplateInputField from '../components/TemplateInputField.vue'
 
-document.title = 'Deal With Pixel - Авторизация';
+document.title = 'Deal With Pixel - Регистрация';
 
 function showAlert(textAlert, typeAlert = 'success', checkMark = Complete) {
     const alertContainer = document.getElementById('alert-container');
@@ -29,7 +29,7 @@ function showAlert(textAlert, typeAlert = 'success', checkMark = Complete) {
 }
 
 function logInAccount() {
-    showAlert('САЛАМ БЛЯЯЯЯ');
+    showAlert('САЛАМ');
 }
 
 </script>
@@ -40,6 +40,7 @@ function logInAccount() {
 <SmallLogoApp  class="position-absolute start-0 top-0 mt-xl-3 mt-lg-2 ms-lg-1 mt-md-2 ms-md-2"/>
 
 <div class="container-lg h-100 d-flex justify-content-center">
+
     <!-- Блок для добавления уведомлений -->
 
     <div id="alert-container" class="position-absolute" style="left: 20%; width: 60%;"></div>
@@ -48,20 +49,24 @@ function logInAccount() {
 
     <div class="col-sm-4 col-md-8 col-lg-10 d-flex align-items-center flex-column justify-content-evenly">
         <div class="text-center">
-            <h1 class="title-auth main-font-family">Авторизация</h1>
+            <h1 class="title-auth main-font-family">Регистрация</h1>
             <div class="box-info d-flex align-items-center justify-content-center main-font-family">
-                <p class="main-font-family" style="letter-spacing: 3px;">Чтобы войти в систему, необходимо заполнить поля ниже</p>
+                <p class="main-font-family" style="letter-spacing: 3px;">Чтобы создать аккаунт, необходимо заполнить поля ниже </p>
                 <img src="@/assets/images/Down.svg" alt="">
             </div>
         </div>
 
-        <form action="" @submit.prevent="logInAccount" class="d-flex flex-column align-items-center justify-content-between gap-2 h-50" style="width: max(60%, 225px);">
-            <TemplateInputField idInputField="LoginMailIF" placeholderInputField="Введите логин/почту" labelText="Логин/почта" />
+        <form action="" @submit.prevent="logInAccount" class="d-flex flex-column align-items-center justify-content-between" style="height: 60%; width: max(60%, 225px);">
+            
+            <TemplateInputField idInputField="MailIF" placeholderInputField="Введите почту" labelText="Почта" />
+            
+            <TemplateInputField idInputField="LoginIF" placeholderInputField="Введите логин" labelText="Логин" />
+            
             <TemplateInputField idInputField="PasswordIF" placeholderInputField="Введите пароль" labelText="Пароль" typeInputField="password" />
             
             <div class="w-100 d-flex justify-content-between">
-                <router-link to="/" class="link-text text-decoration-none text-center main-font-family">Забыли пароль? Восстановить!</router-link>
-                <router-link to="/registration" class="link-text text-decoration-none text-center main-font-family">Нет аккаунта? Создать!</router-link>
+                <p></p>
+                <router-link to="/authorization" class="link-text text-decoration-none text-center main-font-family">Есть аккаунт? Войти!</router-link>
             </div>
 
             <div style="width: max(40%, 175px);" class="mt-5">
@@ -127,13 +132,13 @@ function logInAccount() {
 
 @media (max-width: 400px){
     .title-auth{
-    font-size: 2.5rem;
+        font-size: 2.5rem;
     }
-
+    
     .box-info p{
         font-size: 14px;
     }
-
+    
     .link-text{
         font-size: x-small;
     }

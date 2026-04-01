@@ -21,7 +21,7 @@ function startTheGame() {
     <TemplateBTN textButton="Играть" :actionClick="startTheGame"/>
     <!-- <TemplateBTN /> -->
     <!-- <TemplateBTN /> -->
-    <TemplateBTN textButton="Справка" :actionClick="() => {}" data-bs-toggle="modal" data-bs-target="#projectInformationModal"/>
+    <TemplateBTN textButton="Справка" data-bs-toggle="modal" data-bs-target="#projectInformationModal"/>
 </div>
 
 
