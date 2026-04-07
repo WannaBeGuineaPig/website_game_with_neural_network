@@ -3,6 +3,8 @@
 import { RouterLink, RouterView } from 'vue-router'
 import InformationModal from './components/InformationModal.vue'
 import GameSettingModal from './components/GameSettingModal.vue'
+import SetSizeBrushModal from './components/SetSizeBrushModal.vue'
+import SetTypeImageModal from './components/SetTypeImageModal.vue'
 
 document.title = "Deal With Pixel - ";
 
@@ -19,6 +21,19 @@ document.title = "Deal With Pixel - ";
 <!-- Модальное окно с выбором типа игры -->
 
 <GameSettingModal />
+
+<!--  -->
+
+
+<!-- Модальное окно с выбором пера -->
+
+<SetSizeBrushModal />
+
+<!--  -->
+
+<!-- Модальное окно с выбором типа изображения -->
+
+<SetTypeImageModal />
 
 <!--  -->
 

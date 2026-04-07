@@ -30,7 +30,7 @@ defineProps({
     font-family: sunless-day;
     letter-spacing: 5px;
     background-color: white;
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.2s ease;
 }
 
 .button-style:hover{
