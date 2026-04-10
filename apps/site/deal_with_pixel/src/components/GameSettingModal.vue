@@ -3,8 +3,11 @@
 import TemplateBTN from './TemplateBTN.vue'
 import router from '../router'
 import { inject } from 'vue'
+import { getTopics } from '@/assets/scripts/action-topics'
 
 const $cookies = inject('$cookies')
+
+let topics = await getTopics()
 
 function startTheGame() {
     let typeGame = document.getElementById('selectTypeGame').value;
@@ -15,7 +18,7 @@ function startTheGame() {
         })
         let myBTN = document.getElementById('btnClose');
         myBTN.click();
-        router.push('/game');
+        window.location = 'http://localhost:5173/game' 
     }
     else{
         
@@ -43,7 +46,6 @@ function changeTypeGame(e){
 </script>
 
 <template>
-
 <div class="modal fade main-font-family letter-spacing-five" id="gameSettingModal" tabindex="-1" aria-labelledby="gameSettingModalLabel" aria-hidden=" true">
   <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
@@ -63,8 +65,7 @@ function changeTypeGame(e){
             
             <h5 id="TextTypeImage" class="mt-3">Выбор тип изображения: </h5>
             <select class="form-select letter-spacing-five" id="selectTypeImage">
-                <option selected value="cat">Кот</option>
-                <option value="dog">Собака</option>
+                <option :value="topic" v-for="topic in topics">{{ topic }}</option>
             </select>
 
             <h5 class="mt-3">Выбор типа игры: </h5>

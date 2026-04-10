@@ -20,7 +20,10 @@ document.title = "Deal With Pixel - ";
 
 <!-- Модальное окно с выбором типа игры -->
 
-<GameSettingModal />
+
+<Suspense>
+  <GameSettingModal />
+</Suspense>
 
 <!--  -->
 
@@ -33,7 +36,9 @@ document.title = "Deal With Pixel - ";
 
 <!-- Модальное окно с выбором типа изображения -->
 
-<SetTypeImageModal />
+<Suspense>
+  <SetTypeImageModal />
+</Suspense>
 
 <!--  -->
 

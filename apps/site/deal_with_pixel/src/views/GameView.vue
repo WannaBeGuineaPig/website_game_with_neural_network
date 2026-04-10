@@ -1,5 +1,4 @@
 <script setup>
-
 import router from '@/router';
 import { ref, inject } from 'vue'
 
@@ -7,8 +6,8 @@ document.title = 'Deal With Pixel - Игра';
 
 const windowHeigth = ref(window.innerHeight);
 const windowWidth = ref(window.innerWidth * 0.8);
-const $cookies = inject('$cookies');
-const gameSetting = $cookies.get('gameSetting');
+// const $cookies = inject('$cookies');
+// const gameSetting = $cookies.get('gameSetting');
 
 function resize() {
     windowHeigth.value = window.innerHeight;

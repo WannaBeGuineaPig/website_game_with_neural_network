@@ -1,6 +1,12 @@
 <script setup>
 
 import TemplateBTN from './TemplateBTN.vue'
+import { getTopics } from '@/assets/scripts/action-topics'
+import { inject } from 'vue'
+
+const $cookies = inject('$cookies');
+const gameSetting = $cookies.get('gameSetting');
+let topics = await getTopics()
 
 function setTypeImage() {
   const typeImage = document.getElementById('selectTypeImageGame').value;
@@ -21,8 +27,7 @@ function setTypeImage() {
       <div class="modal-body">
         <h5>Выберете тип изображения, для предсказания нейросетью: </h5>
         <select class="form-select letter-spacing-five" id="selectTypeImageGame">
-            <option selected value="cat">Кот</option>
-            <option value="dog">Собака</option>
+            <option :value="topic" :selected="gameSetting.typeImageGame == topic" v-for="topic in topics">{{ topic }}</option>
         </select>
       </div>
       <div class="modal-footer">
