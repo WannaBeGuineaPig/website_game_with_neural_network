@@ -1,18 +1,15 @@
 <script setup>
 import router from '@/router';
-import { ref, inject } from 'vue'
+import { ref } from 'vue'
 
 document.title = 'Deal With Pixel - Игра';
 
-const windowHeigth = ref(window.innerHeight);
-const windowWidth = ref(window.innerWidth * 0.8);
+const sizeCanvas = ref(window.innerHeight > window.innerWidth * 0.8 ? window.innerWidth * 0.79 : window.innerHeight * 0.99);
 // const $cookies = inject('$cookies');
 // const gameSetting = $cookies.get('gameSetting');
 
 function resize() {
-    windowHeigth.value = window.innerHeight;
-    windowWidth.value = window.innerWidth * 0.8;
-
+    sizeCanvas.value = window.innerHeight > window.innerWidth * 0.8 ? window.innerWidth * 0.79 : window.innerHeight * 0.99;
 }
 window.addEventListener('resize', resize);
 
@@ -120,9 +117,8 @@ export default{
 </script>
 
 <template>
-    <div class="background-canvas position-absolute end-0 h-100"></div>
     <canvas 
-    class="position-absolute end-0" 
+    class="position-absolute" 
     id="сanvasDrawing"  
     v-on:mousedown="startDrawing" 
     v-on:touchstart="startDrawing"
@@ -130,9 +126,8 @@ export default{
     v-on:touchmove="drawing"
     v-on:mouseup="stopDrawing"
     v-on:touchend="stopDrawingTouch" 
-    v-on:mouseleave="() => this.draw = false"
-    :width="windowWidth" 
-    :height="windowHeigth"
+    :width="sizeCanvas" 
+    :height="sizeCanvas"
     ></canvas>
 
     <div class="position-absolute start-0 bottom-0 h-75 d-flex flex-column align-items-center justify-content-center" style="width: 19%;">
@@ -163,12 +158,11 @@ export default{
 </template>
 
 <style scoped>
-    
-.background-canvas {
-    width: 81%;
-    background: url(../assets/images/canvasBackground.svg) white;
+
+#сanvasDrawing{
+    background: url(../assets/images/canvasBackground.svg) rgba(255, 255, 255, 0.7);
     background-size: cover;
-    
+    border: 1px solid black;
 }
 
 .canvas-button{
@@ -190,6 +184,12 @@ export default{
 
 .canvas-button img{
     max-height: 80%;
+}
+
+@media (max-width: 1000px){
+    #сanvasDrawing, .background-canvas{
+        right: 0;
+    }
 }
 
 @media (max-width: 500px){
